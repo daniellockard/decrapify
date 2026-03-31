@@ -8,6 +8,7 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+	"runtime"
 	"testing"
 )
 
@@ -124,6 +125,10 @@ func TestExtract_ReadOnlyOutputDir(t *testing.T) {
 }
 
 func TestExtract_WriteToReadOnlyDir(t *testing.T) {
+	if runtime.GOOS == "windows" {
+		t.Skip("read-only chmod semantics differ on Windows")
+	}
+
 	dir := t.TempDir()
 	docxPath := filepath.Join(dir, "test.docx")
 	createTestDocx(t, docxPath, []string{"image1.png"})

@@ -5,6 +5,7 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+	"runtime"
 	"strings"
 	"testing"
 )
@@ -195,6 +196,10 @@ func TestConvert_NonexistentFile(t *testing.T) {
 }
 
 func TestConvert_ReadOnlyOutputDir(t *testing.T) {
+	if runtime.GOOS == "windows" {
+		t.Skip("read-only chmod semantics differ on Windows")
+	}
+
 	dir := t.TempDir()
 	rtfPath := filepath.Join(dir, "test.rtf")
 	os.WriteFile(rtfPath, []byte(`{\rtf1\ansi hi}`), 0o644)
