@@ -1,5 +1,7 @@
-# Output files
-rtf.out
+# Go coverage files
+*.out
+*.cover
 
-# Extracted test output
+# Test output and artifacts
+rtf.out
 test_files/dec/
