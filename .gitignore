@@ -1,7 +1,34 @@
-# Go coverage files
+# Binaries
+*.exe
+*.dll
+*.so
+*.dylib
+bin/
+dist/
+decrapify
+
+# Coverage
 *.out
 *.cover
+coverage.html
 
-# Test output and artifacts
+# Test artifacts
 rtf.out
 test_files/dec/
+
+# IDE and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.iml
+*.sublime-*
+
+# OS files
+.DS_Store
+Thumbs.db
+*.log
+
+# Go module cache
+vendor/
