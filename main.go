@@ -7,9 +7,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/dlockard/attachment-decrapifier/docx"
-	"github.com/dlockard/attachment-decrapifier/eml"
-	"github.com/dlockard/attachment-decrapifier/rtf"
+	"github.com/daniellockard/decrapify/docx"
+	"github.com/daniellockard/decrapify/eml"
+	"github.com/daniellockard/decrapify/rtf"
 )
 
 func main() {
